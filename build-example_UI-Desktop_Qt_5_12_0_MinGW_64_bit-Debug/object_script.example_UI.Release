@@ -1,0 +1,14 @@
+release/main.o
+release/mainwindow.o
+release/user.o
+release/logindialog.o
+release/admin.o
+release/contacto.o
+release/conversacion.o
+release/colormensaje.o
+release/ventanadeconversaciondialog.o
+release/moc_mainwindow.o
+release/moc_logindialog.o
+release/moc_admin.o
+release/moc_colormensaje.o
+release/moc_ventanadeconversaciondialog.o

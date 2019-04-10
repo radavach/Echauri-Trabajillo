@@ -1,0 +1,14 @@
+debug/main.o
+debug/mainwindow.o
+debug/user.o
+debug/logindialog.o
+debug/admin.o
+debug/contacto.o
+debug/conversacion.o
+debug/colormensaje.o
+debug/ventanadeconversaciondialog.o
+debug/moc_mainwindow.o
+debug/moc_logindialog.o
+debug/moc_admin.o
+debug/moc_colormensaje.o
+debug/moc_ventanadeconversaciondialog.o
