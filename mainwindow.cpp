@@ -130,6 +130,9 @@ void MainWindow::loadUsers()
                 QJsonObject objCont = jsonArrayContactos[j].toObject();
                 contactos.setUserName(objCont["name"].toString());
                 contactos.setPhoneNumber(objCont["phone"].toString());
+                contactos.setColorFondo(objCont["colorFondo"].toString());
+                contactos.setColorRemitente(objCont["colorRemitente"].toString());
+                contactos.setColorDestinatario(objCont["colorDestinatario"].toString());
 
                 QJsonArray jsonArrayMensaje = objCont["mensajes"].toArray();
                 Conversacion conversacion;
@@ -181,6 +184,9 @@ void MainWindow::saveUsers()
 
             jsonObjectContacto["name"] = contactos[j].getUserName();
             jsonObjectContacto["phone"] = contactos[j].getPhoneNumber();
+            jsonObjectContacto["colorFondo"] = contactos[j].getColorFondo();
+            jsonObjectContacto["colorRemitente"] = contactos[j].getColorRemitente();
+            jsonObjectContacto["colorDestinatario"] = contactos[j].getColorDestinatario();
 
             conversaciones = contactos[j].getConversacion();
 
@@ -427,6 +433,9 @@ void MainWindow::on_AddButton_clicked()
                 QJsonObject contactJsonObject;
                 contactJsonObject["name"] = newContact.getUserName();
                 contactJsonObject["phone"] = newContact.getPhoneNumber();
+                contactJsonObject["colorFondo"] = newContact.getColorFondo();
+                contactJsonObject["colorRemitente"] = newContact.getColorRemitente();
+                contactJsonObject["colorDestinatario"] = newContact.getColorDestinatario();
 
                 contactsJsonArray.append(contactJsonObject);   //AGREGAR AL OBJETO JSON
 
@@ -458,7 +467,7 @@ void MainWindow::on_EnviarpushButton_clicked()
     //Si son amigos iniciara la conversacion
     if(validarAmistad())
     {
-        qDebug("Son amigos");
+//        qDebug("Son amigos");
         User *usuario(nullptr), *contacto(nullptr);
         usuario = getThisUser(user->getUserName());
         contacto = getThisUser(ui->EscribirMensajelineEdit->text());
@@ -474,7 +483,7 @@ void MainWindow::on_EnviarpushButton_clicked()
     }
     else
     {
-        qDebug("no son amigos");
+//        qDebug("no son amigos");
     }
 }
 

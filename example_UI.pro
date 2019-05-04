@@ -25,6 +25,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    ajustemensaje.cpp \
         main.cpp \
         mainwindow.cpp \
     user.cpp \
@@ -37,6 +38,7 @@ SOURCES += \
     grafodialog.cpp
 
 HEADERS += \
+    ajustemensaje.h \
         mainwindow.h \
     user.h \
     logindialog.h \
@@ -48,6 +50,7 @@ HEADERS += \
     grafodialog.h
 
 FORMS += \
+    ajustemensaje.ui \
         mainwindow.ui \
     logindialog.ui \
     colormensaje.ui \

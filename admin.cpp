@@ -74,6 +74,9 @@ void Admin::loadDB(){
                 QJsonObject objCont = jsonArrayContactos[j].toObject();
                 contactos.setUserName(objCont["name"].toString());
                 contactos.setPhoneNumber(objCont["phone"].toString());
+                contactos.setColorFondo(objCont["colorFondo"].toString());
+                contactos.setColorRemitente(obj["colorRemitente"].toString());
+                contactos.setColorDestinatario(obj["colorDestinatario"].toString());
 
                 QJsonArray jsonArrayMensaje = objCont["mensajes"].toArray();
                 Conversacion conversacion;

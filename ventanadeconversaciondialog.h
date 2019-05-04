@@ -2,7 +2,6 @@
 #define VENTANADECONVERSACIONDIALOG_H
 
 #include "colormensaje.h"
-//#include "ui_colormensaje.h"
 
 #include "conversacion.h"
 #include "user.h"
@@ -27,6 +26,8 @@ namespace Ui {
 class VentanadeConversacionDialog;
 }
 
+class ajusteMensaje;
+
 class VentanadeConversacionDialog : public QDialog
 {
     Q_OBJECT
@@ -45,6 +46,10 @@ private slots:
     void on_BuscarMensajepushButton_clicked();
 
     void on_BuscarpushButton_clicked();
+
+    void on_ConfiguracionesButton_clicked();
+
+    void guardarAjustes(Contacto con);
 
 private:
     Ui::VentanadeConversacionDialog *ui;
