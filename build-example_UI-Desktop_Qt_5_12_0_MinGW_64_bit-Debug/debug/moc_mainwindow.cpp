@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[15];
-    char stringdata0[293];
+    QByteArrayData data[16];
+    char stringdata0[320];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -45,7 +45,8 @@ QT_MOC_LITERAL(10, 174, 20), // "on_AddButton_clicked"
 QT_MOC_LITERAL(11, 195, 23), // "on_BuscarButton_clicked"
 QT_MOC_LITERAL(12, 219, 27), // "on_EnviarpushButton_clicked"
 QT_MOC_LITERAL(13, 247, 6), // "saveDB"
-QT_MOC_LITERAL(14, 254, 38) // "on_EscribirMensajelineEdit_te..."
+QT_MOC_LITERAL(14, 254, 38), // "on_EscribirMensajelineEdit_te..."
+QT_MOC_LITERAL(15, 293, 26) // "on_grafoPushButton_clicked"
 
     },
     "MainWindow\0saveUs\0\0jsonArray\0"
@@ -56,7 +57,8 @@ QT_MOC_LITERAL(14, 254, 38) // "on_EscribirMensajelineEdit_te..."
     "on_LogOutButton_clicked\0on_AddButton_clicked\0"
     "on_BuscarButton_clicked\0"
     "on_EnviarpushButton_clicked\0saveDB\0"
-    "on_EscribirMensajelineEdit_textChanged"
+    "on_EscribirMensajelineEdit_textChanged\0"
+    "on_grafoPushButton_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -66,7 +68,7 @@ static const uint qt_meta_data_MainWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      11,   14, // methods
+      12,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -74,19 +76,20 @@ static const uint qt_meta_data_MainWindow[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   69,    2, 0x06 /* Public */,
+       1,    1,   74,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    1,   72,    2, 0x08 /* Private */,
-       6,    0,   75,    2, 0x08 /* Private */,
-       7,    1,   76,    2, 0x08 /* Private */,
-       8,    1,   79,    2, 0x08 /* Private */,
-       9,    0,   82,    2, 0x08 /* Private */,
-      10,    0,   83,    2, 0x08 /* Private */,
-      11,    0,   84,    2, 0x08 /* Private */,
-      12,    0,   85,    2, 0x08 /* Private */,
-      13,    0,   86,    2, 0x08 /* Private */,
-      14,    1,   87,    2, 0x08 /* Private */,
+       4,    1,   77,    2, 0x08 /* Private */,
+       6,    0,   80,    2, 0x08 /* Private */,
+       7,    1,   81,    2, 0x08 /* Private */,
+       8,    1,   84,    2, 0x08 /* Private */,
+       9,    0,   87,    2, 0x08 /* Private */,
+      10,    0,   88,    2, 0x08 /* Private */,
+      11,    0,   89,    2, 0x08 /* Private */,
+      12,    0,   90,    2, 0x08 /* Private */,
+      13,    0,   91,    2, 0x08 /* Private */,
+      14,    1,   92,    2, 0x08 /* Private */,
+      15,    0,   95,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QJsonArray,    3,
@@ -102,6 +105,7 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString,    5,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -123,6 +127,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 8: _t->on_EnviarpushButton_clicked(); break;
         case 9: _t->saveDB(); break;
         case 10: _t->on_EscribirMensajelineEdit_textChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 11: _t->on_grafoPushButton_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -166,13 +171,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 11)
+        if (_id < 12)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 11;
+        _id -= 12;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 11)
+        if (_id < 12)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 11;
+        _id -= 12;
     }
     return _id;
 }

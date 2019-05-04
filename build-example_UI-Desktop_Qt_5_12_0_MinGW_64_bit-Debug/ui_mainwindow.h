@@ -33,14 +33,15 @@ public:
     QLineEdit *AddLineEdit;
     QLineEdit *EscribirMensajelineEdit;
     QPushButton *EnviarpushButton;
+    QPushButton *grafoPushButton;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(550, 350);
-        MainWindow->setMinimumSize(QSize(550, 350));
-        MainWindow->setMaximumSize(QSize(550, 350));
+        MainWindow->resize(600, 400);
+        MainWindow->setMinimumSize(QSize(600, 400));
+        MainWindow->setMaximumSize(QSize(600, 400));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         ProfileButton = new QPushButton(centralWidget);
@@ -55,7 +56,7 @@ public:
         ContactsTextEdit = new QTextEdit(centralWidget);
         ContactsTextEdit->setObjectName(QString::fromUtf8("ContactsTextEdit"));
         ContactsTextEdit->setEnabled(false);
-        ContactsTextEdit->setGeometry(QRect(10, 50, 180, 240));
+        ContactsTextEdit->setGeometry(QRect(10, 50, 221, 240));
         ContactsTextEdit->setStyleSheet(QString::fromUtf8("background-color: white; color: black"));
         BuscarButton = new QPushButton(centralWidget);
         BuscarButton->setObjectName(QString::fromUtf8("BuscarButton"));
@@ -68,7 +69,7 @@ public:
         UsersTextEdit = new QTextEdit(centralWidget);
         UsersTextEdit->setObjectName(QString::fromUtf8("UsersTextEdit"));
         UsersTextEdit->setEnabled(false);
-        UsersTextEdit->setGeometry(QRect(200, 50, 340, 250));
+        UsersTextEdit->setGeometry(QRect(250, 50, 331, 250));
         UsersTextEdit->setStyleSheet(QString::fromUtf8("background-color: white; color: black; border: 20;"));
         BusquedaLineEdit = new QLineEdit(centralWidget);
         BusquedaLineEdit->setObjectName(QString::fromUtf8("BusquedaLineEdit"));
@@ -83,6 +84,9 @@ public:
         EnviarpushButton->setObjectName(QString::fromUtf8("EnviarpushButton"));
         EnviarpushButton->setEnabled(false);
         EnviarpushButton->setGeometry(QRect(174, 310, 71, 31));
+        grafoPushButton = new QPushButton(centralWidget);
+        grafoPushButton->setObjectName(QString::fromUtf8("grafoPushButton"));
+        grafoPushButton->setGeometry(QRect(220, 360, 101, 31));
         MainWindow->setCentralWidget(centralWidget);
 
         retranslateUi(MainWindow);
@@ -113,6 +117,7 @@ public:
         AddLineEdit->setPlaceholderText(QApplication::translate("MainWindow", "Ingresa el nombre de usuario", nullptr));
         EscribirMensajelineEdit->setPlaceholderText(QApplication::translate("MainWindow", "Ingresa contacto para mensaje", nullptr));
         EnviarpushButton->setText(QApplication::translate("MainWindow", "Enviar!!", nullptr));
+        grafoPushButton->setText(QApplication::translate("MainWindow", "Grafo...", nullptr));
     } // retranslateUi
 
 };

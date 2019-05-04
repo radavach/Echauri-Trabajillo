@@ -482,3 +482,13 @@ void MainWindow::saveDB()
     saveUsers();
 }
 
+
+void MainWindow::on_grafoPushButton_clicked()
+{
+ grafoDialogo = new GrafoDialog(user, usersVector);
+// connect(grafoDialogo,
+//         SIGNAL(archivoGrafo()),
+//         this,
+//         SLOT());
+ grafoDialogo->show();
+}

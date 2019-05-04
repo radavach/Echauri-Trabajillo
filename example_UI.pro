@@ -33,7 +33,8 @@ SOURCES += \
     contacto.cpp \
     conversacion.cpp \
     colormensaje.cpp \
-    ventanadeconversaciondialog.cpp
+    ventanadeconversaciondialog.cpp \
+    grafodialog.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -43,13 +44,15 @@ HEADERS += \
     contacto.h \
     conversacion.h \
     colormensaje.h \
-    ventanadeconversaciondialog.h
+    ventanadeconversaciondialog.h \
+    grafodialog.h
 
 FORMS += \
         mainwindow.ui \
     logindialog.ui \
     colormensaje.ui \
-    ventanadeconversaciondialog.ui
+    ventanadeconversaciondialog.ui \
+    grafodialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

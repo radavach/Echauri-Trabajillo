@@ -4,6 +4,7 @@
 #include "user.h"
 #include "contacto.h"
 #include "ventanadeconversaciondialog.h"
+#include "grafodialog.h"
 
 #include <vector>
 
@@ -50,10 +51,13 @@ private slots:  //WIDGETS
 
     void on_EscribirMensajelineEdit_textChanged(const QString &arg1);
 
+    void on_grafoPushButton_clicked();
+
 private:
         Ui::MainWindow *ui;
         User *user;
         VentanadeConversacionDialog *conversacion;
+        GrafoDialog *grafoDialogo;
 
         //USERS
         std::vector<User> usersVector;
@@ -66,6 +70,11 @@ private:
         std::vector<User> contactsVector;
         QFile contactsdb;
         QJsonArray contactsJsonArray;
+
+        //GRAPHS
+        std::vector<User>grafoVector;
+        QFile grafodb;
+        QJsonArray graphsJsonArray;
 
 
         //AUXILIARES:

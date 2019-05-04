@@ -7,8 +7,10 @@ release/contacto.o
 release/conversacion.o
 release/colormensaje.o
 release/ventanadeconversaciondialog.o
+release/grafodialog.o
 release/moc_mainwindow.o
 release/moc_logindialog.o
 release/moc_admin.o
 release/moc_colormensaje.o
 release/moc_ventanadeconversaciondialog.o
+release/moc_grafodialog.o
