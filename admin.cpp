@@ -158,12 +158,18 @@ void Admin::validateUser(QString name, QString password)
     for (i=0; i < users.size(); ++i)
     {
         if(users[i].getUserName() == name && users[i].getPassword() == password){
+
             mainWindow = new MainWindow(&users[i]);
 
             connect(mainWindow,
                     SIGNAL(saveUs(QJsonArray)),
                     this,
                     SLOT(guardarContacto(QJsonArray)) );
+
+            connect(mainWindow,
+                    SIGNAL(salir()),
+                    this,
+                    SLOT(cerrarSesion()));
 
             mainWindow->show();
             login->hide();
@@ -178,11 +184,17 @@ void Admin::validateUser(QString name, QString password)
         message.setText("Usuario o contraseña Invalido");
         message.exec();
     }
+
 }
 
 void Admin::guardarContacto(QJsonArray jsonArray)
 {
 
    this->jsonArray = jsonArray;
-   saveDB();
+    saveDB();
+}
+
+void Admin::cerrarSesion()
+{
+    login->show();
 }

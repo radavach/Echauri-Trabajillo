@@ -19,6 +19,8 @@
 #include <QHBoxLayout>
 
 #include <QDebug>
+#include <QColorDialog>
+#include <QColor>
 
 ////Holis señor Christian, este archivo es el más importante de la conversacion
 namespace Ui {

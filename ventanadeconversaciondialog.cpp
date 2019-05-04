@@ -31,6 +31,13 @@ VentanadeConversacionDialog::VentanadeConversacionDialog(User *users, User *cont
      ui->conversaciontableWidget->verticalHeader()->hide();
 
     actualizacionDeConversacion();
+
+    QColor color = QColorDialog::getColor(Qt::white, this, "Escoge un color :3");
+    if(color.isValid())
+    {
+        qDebug() << color.name();
+
+    }
 }
 //Destructor
 VentanadeConversacionDialog::~VentanadeConversacionDialog()

@@ -103,7 +103,6 @@ void loginDialog::on_CreatePB_clicked()
     ui->NewPasswordLE->setText("");
     ui->phoneLE->setText("");
 
-
 }
 
 void loginDialog::on_LoginPB_clicked()
@@ -112,6 +111,9 @@ void loginDialog::on_LoginPB_clicked()
         ui->UserLE->text(),
         ui->PasswordLE->text()
     );
+
+    ui->UserLE->clear();
+    ui->PasswordLE->clear();
 }
 
 void loginDialog::on_NewUserLE_cursorPositionChanged(int arg1, int arg2)

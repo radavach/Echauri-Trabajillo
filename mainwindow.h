@@ -93,6 +93,7 @@ private:
 
 signals:
         void saveUs(QJsonArray jsonArray);
+        void salir();
 };
 
 #endif // MAINWINDOW_H

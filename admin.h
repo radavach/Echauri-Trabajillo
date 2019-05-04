@@ -42,6 +42,7 @@ private slots:
         void addUser(QString name, QString phone, QString password);
         void validateUser(QString name, QString password);
         void guardarContacto(QJsonArray jsonArray);
+        void cerrarSesion();
 };
 
 #endif // ADMIN_H

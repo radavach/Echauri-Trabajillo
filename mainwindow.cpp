@@ -19,6 +19,7 @@ MainWindow::~MainWindow()
 {
     //saveContacts();
     saveUsers();
+
     delete ui;
 }
 
@@ -90,6 +91,7 @@ void MainWindow::on_LogOutButton_clicked()
 {
     //saveContacts();
     saveUsers();
+    emit salir();
     this->close();
 }
 
