@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>192</width>
+    <width>205</width>
     <height>191</height>
    </rect>
   </property>
@@ -16,7 +16,7 @@
   <widget class="QPushButton" name="btnGuardar">
    <property name="geometry">
     <rect>
-     <x>94</x>
+     <x>110</x>
      <y>160</y>
      <width>91</width>
      <height>23</height>
@@ -127,6 +127,22 @@
    </property>
    <property name="text">
     <string>Fondo</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnReestablecer">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>160</y>
+     <width>91</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>Reestablecer</string>
    </property>
   </widget>
  </widget>

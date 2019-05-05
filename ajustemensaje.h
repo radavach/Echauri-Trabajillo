@@ -35,6 +35,8 @@ private slots:
 
     void on_btnGuardar_clicked();
 
+    void on_btnReestablecer_clicked();
+
 private:
     VentanadeConversacionDialog *ventanaAnt;
     Contacto *conversacion;

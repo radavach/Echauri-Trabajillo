@@ -216,8 +216,11 @@ void VentanadeConversacionDialog::on_ConfiguracionesButton_clicked()
 
 void VentanadeConversacionDialog::guardarAjustes(Contacto con)
 {
+//    ui->conversaciontableWidget->setStyleSheet("background-color: " + con.getColorFondo());
     conversacionUsuario->setColorFondo(con.getColorFondo());
     conversacionUsuario->setColorRemitente(con.getColorRemitente());
     conversacionUsuario->setColorDestinatario(con.getColorDestinatario());
     actualizacionDeConversacion();
+    emit saveConv();
+
 }

@@ -66,7 +66,6 @@ void ajusteMensaje::on_btnFondo_clicked()
 
 void ajusteMensaje::on_btnGuardar_clicked()
 {
-    qDebug() << ":3";
     conversacion->setColorFondo(colorFondo);
     conversacion->setColorRemitente(colorRemitente);
     conversacion->setColorDestinatario(colorDestinatario);
@@ -74,4 +73,23 @@ void ajusteMensaje::on_btnGuardar_clicked()
     ventanaAnt->show();
     ventanaAnt = nullptr;
     close();
+}
+
+void ajusteMensaje::on_btnReestablecer_clicked()
+{
+    Contacto contact;
+    colorFondo = contact.getColorFondo();
+    colorRemitente = contact.getColorRemitente();
+    colorDestinatario = contact.getColorDestinatario();
+
+    QString style;
+
+    style = "background: " + colorRemitente;
+    ui->leRemitente->setStyleSheet(style);
+
+    style = "background: " + colorDestinatario;
+    ui->leDestinatario->setStyleSheet(style);
+
+    style = "background: " + colorFondo;
+    ui->leFondo->setStyleSheet(style);
 }

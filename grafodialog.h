@@ -13,9 +13,12 @@
 #include <QJsonArray>
 #include <QMessageBox>
 
+#include <queue>
+
 #include "user.h"
 #include "contacto.h"
 #include "conversacion.h"
+#include "aristavertices.h"
 
 namespace Ui {
 class GrafoDialog;
@@ -33,6 +36,12 @@ public:
 private slots:
     void on_visualizarPushButton_clicked();
 
+    void on_btnMostrar_clicked();
+
+    void on_radioButton_clicked();
+
+    void on_rbtnKruskal_clicked();
+
 private:
     Ui::GrafoDialog *ui;
     User *user;
@@ -42,6 +51,13 @@ private:
     QHash<QString, QHash<QString, unsigned long long > > grafo;
 
     void grafoContactos();
+    void grafoCompleto();
+
+    void aplicarPrim();
+    void aplicarKruskal();
+
+    void agregarAlGrafo(AristaVertices &aristaVertice);
+
     User regresarMensajesUsuario(QString nombreDeUsuario);
 
 

@@ -68,9 +68,9 @@ void Admin::loadDB(){
             ///Para leer la lista de contactos
             /// se convierte en array
             QJsonArray jsonArrayContactos = obj["contactos"].toArray();
-            Contacto contactos;
             for(int j=0; j < jsonArrayContactos.size(); j++)
             {
+                Contacto contactos;
                 QJsonObject objCont = jsonArrayContactos[j].toObject();
                 contactos.setUserName(objCont["name"].toString());
                 contactos.setPhoneNumber(objCont["phone"].toString());
@@ -79,11 +79,11 @@ void Admin::loadDB(){
                 contactos.setColorDestinatario(obj["colorDestinatario"].toString());
 
                 QJsonArray jsonArrayMensaje = objCont["mensajes"].toArray();
-                Conversacion conversacion;
 
                 ///Lo siguiente que se hará es ... No recuerdo, lo siento !!!!!! :(
                 for(int m= 0; m <jsonArrayMensaje.size(); m++)
                 {
+                    Conversacion conversacion;
                     QJsonObject objMensaje = jsonArrayMensaje[m].toObject();
                     conversacion.setFecha(objMensaje["fecha"].toString());
                     conversacion.setTexto(objMensaje["texto"].toString());

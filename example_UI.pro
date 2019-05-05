@@ -26,6 +26,7 @@ CONFIG += c++11
 
 SOURCES += \
     ajustemensaje.cpp \
+    aristavertices.cpp \
         main.cpp \
         mainwindow.cpp \
     user.cpp \
@@ -39,6 +40,7 @@ SOURCES += \
 
 HEADERS += \
     ajustemensaje.h \
+    aristavertices.h \
         mainwindow.h \
     user.h \
     logindialog.h \

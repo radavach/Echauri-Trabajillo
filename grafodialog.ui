@@ -35,7 +35,7 @@
   <widget class="QPushButton" name="visualizarPushButton">
    <property name="geometry">
     <rect>
-     <x>160</x>
+     <x>20</x>
      <y>40</y>
      <width>101</width>
      <height>41</height>
@@ -69,6 +69,58 @@
      <string>Peso</string>
     </property>
    </column>
+  </widget>
+  <widget class="QPushButton" name="btnMostrar">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>40</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Mostrar</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="rbtnPrim">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>70</y>
+     <width>82</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Prim</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="rbtnGrafo">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>40</y>
+     <width>82</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Grafo</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="rbtnKruskal">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>37</y>
+     <width>82</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Kruskal</string>
+   </property>
   </widget>
  </widget>
  <resources/>
