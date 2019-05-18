@@ -77,19 +77,20 @@ void GrafoDialog::grafoCompleto()
 
 void GrafoDialog::aplicarPrim()
 {
-    std::priority_queue<AristaVertices, std::vector<AristaVertices>, std::greater<AristaVertices>> colaPrioridad;
+    std::priority_queue<AristaVertices> colaPrioridad;
     QList<QString> listaVisitados;
 
     QString origen, destino;
     unsigned long long peso;
-
+///se obtiene la conversación del usuario con todos sus contactos
     User conversacion = regresarMensajesUsuario(user->getUserName());
     origen = user->getUserName();
-
+///Obtiene el nombre y el numero de mensajes
     for (unsigned i = 0; i < conversacion.getContactos().size(); i++)
     {
         destino = conversacion.getContactos()[i].getUserName();
-        peso = static_cast<unsigned long long>(conversacion.getContactos()[i].getConversacion().size());
+        peso = conversacion.getContactos()[i].getConversacion().size();
+//        peso = static_cast<unsigned long long>(conversacion.getContactos()[i].getConversacion().size());
 
         (peso != 0) ? colaPrioridad.push(*(new AristaVertices(origen, destino, peso))) : void();
     }
@@ -125,6 +126,8 @@ void GrafoDialog::aplicarPrim()
 
         aristaActual = colaPrioridad.top();
 
+        colaPrioridad.pop();
+
         if(!listaVisitados.contains(aristaActual.getDestino()))
         {
             conversacion = regresarMensajesUsuario(aristaActual.getDestino());
@@ -142,13 +145,12 @@ void GrafoDialog::aplicarPrim()
             listaVisitados.append(aristaActual.getDestino());
             agregarAlGrafo(aristaActual);
         }
-        colaPrioridad.pop();
     }
 }
 
 void GrafoDialog::aplicarKruskal()
 {
-    std::priority_queue<AristaVertices, std::vector<AristaVertices>, std::greater<AristaVertices>> colaPrioridad;
+    std::priority_queue<AristaVertices> colaPrioridad;
     QList<QString> listaVisitados;
     QList<QList<QString>> listaConectados;
 
@@ -194,6 +196,8 @@ void GrafoDialog::aplicarKruskal()
     while (!colaPrioridad.empty()) {
 
         aristaActual = colaPrioridad.top();
+
+        colaPrioridad.pop();
 
         if(!listaVisitados.contains(aristaActual.getDestino()))
         {
@@ -244,7 +248,6 @@ void GrafoDialog::aplicarKruskal()
                 agregarAlGrafo(aristaActual);
             }
         }
-        colaPrioridad.pop();
     }
 }
 
@@ -253,12 +256,22 @@ void GrafoDialog::agregarAlGrafo(AristaVertices &aristaVertice)
     //Agregar de ida
     arista.clear();
     arista.insert(aristaVertice.getDestino(), aristaVertice.getPeso());
-    grafo.insert(aristaVertice.getOrigen(), arista);
+    if(!grafo.contains(aristaVertice.getOrigen())){
+        grafo.insert(aristaVertice.getOrigen(), arista);
+    }
+    else{
+        grafo[aristaVertice.getOrigen()].insert(aristaVertice.getDestino(), aristaVertice.getPeso());
+    }
 
     //Agregar de regreso
     arista.clear();
     arista.insert(aristaVertice.getOrigen(), aristaVertice.getPeso());
-    grafo.insert(aristaVertice.getDestino(), arista);
+    if(!grafo.contains(aristaVertice.getDestino())){
+        grafo.insert(aristaVertice.getDestino(), arista);
+    }
+    else{
+        grafo[aristaVertice.getOrigen()].insert(aristaVertice.getOrigen(), aristaVertice.getPeso());
+    }
 
 }
 
@@ -333,10 +346,10 @@ void GrafoDialog::on_btnMostrar_clicked()
     {
         grafoCompleto();
     }
-    else if (ui->rbtnKruskal->isChecked())
-    {
-        aplicarKruskal();
-    }
+//    else if (ui->rbtnKruskal->isChecked())
+//    {
+//        aplicarKruskal();
+//    }
 
     vista();
 }
